@@ -8,8 +8,17 @@ def nfl_standing_data():
 
     response = requests.get(url)
     data = response.json()
-    return data
+    data_string = json.dumps(data)
+    return data_string
 
 
+data = nfl_standing_data()
+print(data)
 
 
+# with open("nfl_season_information.txt", "a") as f:
+#   f.write(data)
+
+# #open and read the file after the appending:
+# with open("nfl_season_information.txt") as f:
+#   print(f.read())
